@@ -1,0 +1,12 @@
+<div *ngIf="hero">
+    <div class="flex flex-col p-4">
+        <h2>{{hero.name | uppercase}} Details</h2>
+        <p>ID: {{hero.id}}</p>
+        <p>Name: {{hero.name}}</p>
+    </div>
+    <div class="flex flex-col p-4">
+        <label for="heroName">
+            <input class="h-8 px-2" [(ngModel)]="hero.name" type="text" placeholder="Name" />
+        </label>
+    </div>
+</div>
