@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.5.
 
-# Initial setup
+## Initial setup
 
 Run `npm install -g @angular/cli` after cloning the repository to enable `ng` commands.
 
