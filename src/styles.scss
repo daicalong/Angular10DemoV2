@@ -4,3 +4,24 @@
 @import 'tailwindcss/components';
 
 @import 'tailwindcss/utilities';
+
+
+app-player-list, app-heroes {
+    @apply block mx-auto my-8 fake-container;
+}
+
+.fake-container {
+    width: 100%;
+    @screen sm {
+      max-width: theme('screens.sm');
+    }
+    @screen md {
+      max-width: theme('screens.md');
+    }
+    @screen lg {
+      max-width: theme('screens.lg');
+    }
+    @screen xl {
+      max-width: theme('screens.xl');
+    }
+ }
