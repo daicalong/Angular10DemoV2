@@ -1,14 +1,14 @@
 <div class="flex flex-col p-4">
     <ul class="list-none">
         <li class="flex flex-row flex-wrap p-2 mt-1 text-sm font-semibold text-blue-500 uppercase transition duration-150 border-b border-gray-500 border-solid">
-            <span class="p-2 flex-1/5" (click)="sortBy('Id')">ID</span>
-            <span class="p-2 flex-1/5" (click)="sortBy('Name')">Name</span>
-            <span class="p-2 flex-1/5" (click)="sortBy('Number')">Jersey</span>
-            <span class="p-2 flex-1/5" (click)="sortBy('Position')">Position</span>
-            <span class="p-2 flex-1/5" (click)="sortBy('Team')">Team</span>
+            <span class="p-2 cursor-pointer flex-1/5" (click)="changeSortBy('Id')">ID</span>
+            <span class="p-2 cursor-pointer flex-1/5" (click)="changeSortBy('Name')">Name</span>
+            <span class="p-2 cursor-pointer flex-1/5" (click)="changeSortBy('Number')">Jersey</span>
+            <span class="p-2 cursor-pointer flex-1/5" (click)="changeSortBy('Position')">Position</span>
+            <span class="p-2 cursor-pointer flex-1/5" (click)="changeSortBy('Team')">Team</span>
         </li>
         <li class="flex flex-row flex-wrap p-2 mt-1 transition duration-150 border-2 border-transparent border-solid"
-         *ngFor="let player of orderedPlayerList()" >
+         *ngFor="let player of playerList" >
             <span class="p-2 flex-1/5">{{player.Id}}</span>
             <span class="p-2 flex-1/5">{{player.Name}}</span>
             <span class="p-2 flex-1/5">{{player.Number}}</span>

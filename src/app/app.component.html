@@ -2,7 +2,7 @@
     <h1 class="text-2xl font-semibold text-center text-pink-500">{{title}}</h1>
 </section>
 <nav class="container flex flex-row mx-auto my-8">
-    <a *ngFor="let nav of navItems" routerLink="/{{nav.path}}"
+    <a *ngFor="let nav of navItems" routerLink="/{{nav.path}}" [routerLinkActive]="['font-semibold', 'text-blue-600']"
     class="p-2 mr-2 text-blue-500 hover:text-blue-600">{{nav.data?.name}}</a>
 </nav>
 <router-outlet></router-outlet>

@@ -13,23 +13,28 @@ export class PlayerListComponent implements OnInit {
 
   constructor(private messageService: MessageService) { }
 
-  playerList: Array<Player> = PlayerList;
-  selectedProp: string = "";
+  playerList: Player[] = PlayerList;
+  sortBy: keyof Player = 'Name';
+  sortOrderDesc: boolean = false;
 
-  compareName (player1: Player, player2: Player)  {
-    return player1.Name > player2.Name ? 1 : player1.Name === player2.Name ? 0 : -1;
+  changeSortBy(input: keyof Player): void {
+    this.sortOrderDesc = this.sortBy === input ? !this.sortOrderDesc : false
+    this.sortBy = input;
+    this.sortPlayers();
+    this.reverseSortOrder(this.sortOrderDesc);
   }
 
-  orderedPlayerList(): Array<Player> {
-    return this.playerList.sort(this.compareName);
+  private reverseSortOrder(sortOrderDesc: boolean): void {
+    if (sortOrderDesc) this.playerList.reverse();
   }
 
-  sortBy(prop: string): void {
-    this.messageService.add(`Sorting NFL list by: ${this.selectedProp}`)
-    this.selectedProp = prop;
+  private sortPlayers(): Player[] {
+    return this.playerList.sort((a, b) => {
+      // if (a[this.sortBy] > b[this.sortBy]) return 1;
+      // if (a[this.sortBy] < b[this.sortBy]) return -1;
+      return 0;
+    })
   }
 
-  ngOnInit(): void {
-    this.selectedProp = 'Name';
-  }
+  ngOnInit(): void { }
 }
